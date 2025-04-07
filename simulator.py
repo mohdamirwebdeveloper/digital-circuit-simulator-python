@@ -65,12 +65,32 @@ def ANDthreeIN(A:int,B:int,C:int) ->int:
         return 0
 
 def OR(A:int, B:int)->int:
+
+    
     if(A == 0 and B == 0):
         return 0
     else:
         return 1 
         
 def NOT(A:int)-> int:
+    """
+    Performs a logical NOT operation on a binary input.
+
+    The NOT gate inverts the input: returns 1 if input is 0, and 0 if input is 1.
+
+    Args:
+        A (int): Binary input (0 or 1).
+
+    Returns:
+        int: Inverted value of A.
+
+    Example:
+        >>> NOT(0)
+        1
+        >>> NOT(1)
+        0
+    """
+    
     if(A == 0):
         return 1
     else:
