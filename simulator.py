@@ -200,8 +200,45 @@ def ArrayAdder4bit(A0:int,A1:int,A2:int,A3:int, B0:int,B1:int,B2:int,B3:int, Cin
 
 
 def Mux4x1(A:int,B:int,C:int,D:int,S0:int,S1:int)->int:
+    
+    """
+    Simulates a 4x1 multiplexer using basic logic gates.
+
+    The multiplexer selects one of the four input values (A, B, C, D) based on the values 
+    of the two select lines (S0, S1), and returns the selected input.
+
+    Selection Mapping:
+        S1 S0 | Output
+        ------|--------
+        0  0 | A
+        0  1 | B
+        1  0 | C
+        1  1 | D
+
+    Args:
+        A (int): First input (selected when S1=0 and S0=0).
+        B (int): Second input (selected when S1=0 and S0=1).
+        C (int): Third input (selected when S1=1 and S0=0).
+        D (int): Fourth input (selected when S1=1 and S0=1).
+        S0 (int): Select lines.
+        S1 (int): select lines.
+    """
+    
     compS0 = NOT(S0)
     compS1 = NOT(S1)
+    
+    
+    AO = AND(AND(compS0,compS1),A)
+    BO = AND(AND(compS0,S1),B)
+    CO = AND(AND(S0,compS1),C)
+    DO = AND(AND(S0,S1),D)
+
+    x = OR(AO,BO)
+    y = OR(CO,DO)
+
+    mux = OR(x,y)
+
+    return mux
 
 
 
