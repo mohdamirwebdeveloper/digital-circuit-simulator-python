@@ -11,5 +11,6 @@ while True:
     # C1 = int(input("Enter the Third Binary bit : "))
     # D1 = int(input("Enter the Third Binary bit : "))
     
-    simulator.FullAdder()
+    x = simulator.Mux4x1(1,1,0,1,0,0)
+    print(x)
     break
