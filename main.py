@@ -25,4 +25,16 @@ while True:
     sum = simulator.Mux4x1(A,Acomp,Acomp,A,B,Cin)
     carry = simulator.Mux4x1(0,A,A,1,B,Cin)
     print(sum,carry)
+
+        # full subtractor using MUX 
+
+    print("<-----------------------Full subtracter------------------------------>")
+
+    A = int(input("Enter the first Bit A : "))
+    B = int(input("Enter the Second Bit B : "))
+    Bin = int(input("Enter the Third Bit Cin (Carry IN) : "))
+    Acomp = simulator.NOT(A)
+    diff = simulator.Mux4x1(A,Acomp,Acomp,A,B,Bin)
+    borrow = simulator.Mux4x1(0,Acomp,Acomp,1,B,Bin)
+    print(diff,borrow)
     
