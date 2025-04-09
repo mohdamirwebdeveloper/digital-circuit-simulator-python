@@ -15,6 +15,18 @@ while True:
     print(x)
 
         #examples
+        #examples
+    A = int(input("Enter the first bit : "))
+    B = int(input("Enter the second bit : "))
+    
+    print("AND operation : ",simulator.AND(A,B))
+    print("OR operation : ",simulator.OR(A,B))
+    print("NOT operation : ",simulator.NOT(A))
+    print("NAND operation : ",simulator.NAND(A,B))
+    print("NOR operation : ",simulator.NOR(A,B))
+    print("XOR operation : ",simulator.XOR(A,B))
+    print("XNOR operation : ",simulator.XNOR(A,B))
+    
     #Implementing Full adder using MUX
     A = int(input("Enter the first Bit A : "))
     B = int(input("Enter the Second Bit B : "))
